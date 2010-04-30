@@ -1,0 +1,41 @@
+% Create your own macros here!
+
+%% Place a figure
+% 1.) alt-caption (for lof)
+% 2.) caption
+% 3.) label
+% 4.) figure placement (htbp)
+% 5.) figure content
+\newcommand{\FIG}[5][]{
+  \begin{figure}[#4]
+  \centering
+  #5 
+  \ifthenelse{\equal{#1}{}}{%
+    \caption{#2}
+  }{%
+    \caption[#1]{#2}
+  }
+  \label{fig:#3}
+  \end{figure}%
+}
+
+%% Place a sideways figure
+% 1.) alt-caption (for lof)
+% 2.) caption
+% 3.) label
+% 4.) figure placement (htbp)
+% 5.) figure content
+\newcommand{\SFIG}[5][]{
+  \begin{sidewaysfigure}[#4]
+  \centering
+  #5 
+  \ifthenelse{\equal{#1}{}}{%
+    \caption{#2}
+  }{%
+    \caption[#1]{#2}
+  }
+  \label{fig:#3}
+  \end{sidewaysfigure}%
+}
+
+% vim: set ft=tex

@@ -1,0 +1,133 @@
+\documentclass[%
+a4paper,%
+11pt,%
+DIV12,%
+BCOR20mm,%
+twoside,%
+openright,%
+headsepline,%
+bibtotocnumbered%
+]{scrbook}
+
+%%% Sprach-Konfiguration
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\hyphenation{whe-ther}
+
+%%% Grafik-Konfiguration
+\usepackage{graphicx}
+%\usepackage[hang]{subfigure}     % Subfigures if you need them
+\usepackage{rotating}             % you can place sidewaysfigures with this!
+\usepackage[format=hang]{caption} % Better-looking captions
+
+%%% Schriftarten und Symbole
+\usepackage[T1]{fontenc}
+
+% -- Use this if you want some nicer fonts --
+\usepackage{mathptmx}
+\usepackage[scaled=0.9]{helvet}
+% \usepackage{courier} % I don't like courier
+\usepackage{ascii}
+
+%\usepackage{latexsym}
+%\usepackage[thickspace]{SIunits}
+
+%%% Mathematik
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%%% Sonstiges
+\usepackage[below]{placeins} % Manages Floats
+%\usepackage{calc}
+\usepackage{ifthen}    % Needed for macros
+%\usepackage{url}      % Typeset clicable URL's 
+\usepackage{xspace}    % Useful for macros!
+\usepackage{acronym}   % Acronym management package
+\usepackage{blindtext} % Generates Lorem Ipsum for this template
+\usepackage{booktabs}  % Typesets optimal tables; see documentation
+%\usepackage{python}   % Python Scripting!
+
+\usepackage{tikz}      % If you want to use TikZ for some figures
+\input{img/tikzsetup}  % See img/tikzsetup.tex for further explanations
+
+%%% If you need code-listings
+%\usepackage{listings}
+%\lstloadlanguages{C}
+%\lstset{%
+%language=C,%
+%basicstyle=\ttfamily\small,%
+%keywordstyle=\bfseries,%
+%identifierstyle=,%
+%commentstyle=\itshape,%
+%showstringspaces=false,%
+%numbers=left,%
+%numberstyle=\ttfamily\footnotesize,%
+%numbersep=1em,%
+%xleftmargin=12mm,%
+%breaklines=true,%
+%breakatwhitespace=true,%
+%}
+
+%%% Set up PDF-Stuff
+\input{pdfsetup}  % Customize pdfsetup.tex
+
+%%% Set up the Title
+\input{titlesetup} % Customize titlesetup.tex for a nice title
+
+%%% Input own Macro's
+\input{macros}
+
+
+%%% Which Chapters to include in draft. Commentate for production.
+%\includeonly{%
+%abstract,%
+%introduction,%
+%background,%
+%design,%
+%implementation,%
+%performancestudy,%
+%conclusions,%
+%appendixA,%
+%appendixB%
+%}
+
+%%%
+\begin{document}
+%\input{lsthack}  % Uncomment if you use listings !!!
+\frontmatter
+\Maketitle
+
+\include{abstract}
+
+\tableofcontents
+\listoffigures
+%\listoftables      % Uncomment if you have tables
+%\lstlistoflistings % Uncomment if you use listings
+
+\mainmatter
+
+\include{introduction}
+\include{background}
+\include{relatedwork}
+\include{problemstatement}
+\include{contribution1}
+\include{contribution2}
+\include{conclusions}
+
+\appendix
+\part*{\appendixname}
+\include{appendixA}
+\include{appendixB}
+%\input{acronyms} % See acrodb.tex for info
+\input{acrodb}
+
+% Bibliography
+\bibliographystyle{plain}
+\bibliography{thesis}
+%
+\backmatter
+\input{erklaerung}
+%
+\end{document}
+%EOF
+% vim: set ft=tex

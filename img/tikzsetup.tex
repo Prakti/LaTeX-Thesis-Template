@@ -1,0 +1,35 @@
+\usetikzlibrary{positioning}
+\usetikzlibrary{automata}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usetikzlibrary{fit}
+\usetikzlibrary{calc}
+\usetikzlibrary{chains}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.symbols}
+\usetikzlibrary{shapes.arrows}
+\usetikzlibrary{shapes.callouts}
+\usetikzlibrary{decorations.shapes}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
+
+%%%% Define TikZ styles
+%% Generic styles for pictures, nodes, ...
+\tikzstyle{every picture}=[>=latex', double distance=2pt]
+\tikzstyle{every node}=[font=\sffamily\small]
+
+%% Utilities
+\tikzstyle{reset}=[inner sep=1ex, minimum width=0mm, anchor=center]
+
+%% Macros for MLA components
+\tikzstyle{square}=[minimum width=8mm, minimum height=8mm]
+\tikzstyle{component}=[draw, rectangle, rounded corners]
+\tikzstyle{layer}=[component, drop shadow, fill=white]
+
+%%%%% Setting up some layers
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+

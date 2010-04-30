@@ -1,0 +1,31 @@
+%%% Set up hyperref if we are compiling with pdflatex
+%%
+\ifx\pdftexversion\undefined
+\usepackage{hyperref}
+\else
+\usepackage[colorlinks=false,       %true => text des links wird farbig, false => farbiges kaestchen (wird nicht gedruckt) um schwarzen text
+            linkcolor=black,        %nur bei colorlinks=true
+            urlcolor=black,
+            citecolor=black,
+            bookmarks,                  % Bookmarks erstellen
+            bookmarksopen=true,         % Bookmark beim Oeffnen anzeigen?
+            pdfpagemode=UseOutlines,    % Bookmark beim Oeffnenanzeigen? (UseOutlines / none)
+            bookmarksopenlevel=3,       % bis zu welcher Ebenen geoeffnet
+            bookmarksnumbered,          % Kapitelnummern in Bookmarks
+            pdftitle={see pdfsetup.tex on how to set a title here (and other pdf magic)},
+            pdfsubject={Masterarbeit},
+            pdfkeywords={input, some, keywords, here},
+            pdfauthor={Input your name here!}
+            ]{hyperref}
+\fi
+
+%%% 
+%%
+\ifx\pdftexversion\undefined
+\else
+\pdfoutput=1        % PDF-Ausgabe anschalten.
+\pdfimageresolution=600
+\pdfcompresslevel=9 % 0 keine kompression, 9 staerkste kompression
+\fi
+
+% vim: set ft=tex

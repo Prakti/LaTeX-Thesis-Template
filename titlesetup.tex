@@ -1,0 +1,65 @@
+%%% Daten für die Titelseite. Bitte korrekt ausfüllen. ;-)
+%%
+\newcommand{\Title}{Writing a Masters Thesis using \LaTeXe and Advice from
+Prof.\ John\ W.\ Chinneck}
+\newcommand{\Type}{Masterarbeit}
+\newcommand{\Author}{\href{mailto:mustermann@upb.de}{Manfred Mustermann}}
+\newcommand{\Strasse}{Irgendeine Strasse 99}
+\newcommand{\Matrikelnummer}{1234567}
+\newcommand{\Ort}{33100 Paderborn}
+\newcommand{\BetreuerA}{\href{mailto:holger.karl@upb.de}{Prof.\ Dr.\ Holger\ Karl}}
+\newcommand{\BetreuerB}{\href{mailto:mitarbeiter@upb.de}{Mitarbeiter Sowieso}}
+\newcommand{\Zweitgutachter}{\href{mailto:zweitgutachter@upb.de}{Prof.\ Dr.\ Sowieso Sowieso}}
+\newcommand{\Date}{Abgabe-Datum hier eintragen}
+
+
+%%% ------- DO NOT MODIFY BELOW HERE --------
+%%
+\newcommand{\Maketitle}{%
+%
+\titlehead{%
+\includegraphics[scale=0.4]{img/uni-logo-woname}%
+\hfill%
+\raisebox{1em}{
+\parbox[c]{10cm}{%
+\begin{center}
+  Universität Paderborn --- Fakultät EIM-I \\
+  Fachgebiet Rechnernetze \\
+  Prof.\ Dr.\ H.\ Karl
+\end{center}%
+}}\hfill%
+\includegraphics*[width=0.09\textwidth]{img/fg-logo}
+}
+%
+\subject{%
+\Type
+}
+%
+\title{\Title}
+\author{\Author}
+\date{\Date}
+\publishers{Betreut von: \\ \BetreuerA \\ \BetreuerB}
+
+\uppertitleback{%
+\textbf{\Type} \\
+am Fachgebiet Rechnernetze
+Prof.\ Dr.\ Holger\ Karl \\[1em]
+Institut für Informatik\\
+Fakultät für Elektrotechnik, Informatik und Mathematik\\
+Universität Paderborn \\[2em]
+Vorgelegt von: \\
+\Author \\
+Matrikelnummer: \Matrikelnummer \\
+\Strasse \\
+\Ort\\[1em]
+am \\
+\Date \\[2em]
+Betreut durch:\\
+\BetreuerA \\
+\BetreuerB \\[2em]
+Zweitgutachter:\\
+\Zweitgutachter
+}
+\maketitle%
+}
+% vim: set ft=tex

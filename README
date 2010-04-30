@@ -1,0 +1,84 @@
+Master Thesis LaTeX Template
+============================
+
+The main document is 'masterarbeit.tex', it contains the document preamble
+with all the included (and uncommented) packages you might need useful and the
+overall document structure. All chapters are '\include'ed into this main
+document, so SCM's like SVN, GIT, HG can handle them better.
+
+
+Quickstart:
+-----------
+To get started:
+* install all the needed packages used in 'masterarbeit.tex'
+* test-compile 'masterarbeit.tex' and tune the used packages
+* edit 'titlesetup.tex' and 'pdfsetup.tex' to your needs
+
+"WARNING": You need a fairly recent version of the TikZ package in order to
+           successfully compile the template. 
+
+
+Acronyms:
+---------
+This Template comes with a database of acronyms, called 'acrodb.tex'. During
+drafting and editing, use this database with all the acronyms. For the final
+production of the document use 'acrobib.py' to compile a file containing only
+the used acronyms, called 'acronyms.tex' and modify the '\input{}' statements at
+the end of 'masterarbeit.tex'.
+
+
+Images & TikZ
+-------------
+* All images should reside in the 'img' subdirectory.
+* The file 'macros.tex' provides to commands to quickly set figures
+  - One for normal figures and one for sidewaysfigures
+  - Both macros prefix all labels of figures with 'fig:'
+* If you use TikZ you can put global styles in the file 'img/tikzsetup.tex'
+* Configuration of use TikZ libraries is also done in 'img/tikzsetup.tex'
+* You should \input{} your TikZ images. I recommend the following workcycle:
+  - develop your image in a separate file using 'a5paper' in 'landscape' mode
+  - move reusable styles from the image to 'tikzsetup.tex'
+  - \input{} your image in your text.
+
+
+Fonts
+-----
+I have switched the used fonts from Knuths defaults (Computer Modern) to
+'Times' (**not** Time New Roman), 'Helvetica' and 'ASCII'. You can find the
+setttings in 'masterarbeit.tex'.
+  
+
+Macros
+------
+One particular strength of LaTeX is the fact, that you can define your own
+macro commands which can make writing your thesis more painless. Put all your
+macros in 'macros.tex'. You might want to use the 'xspace' package in several
+cases. I recommend the following workcycle:
+
+  * Detect inefficiency: complicated names or specifications, error-prone
+    names, repetitive use of commands and text.
+  * Refactor a fragment into a macro
+  * Use the macro and improve it
+  * Lather, rinse, repeat
+
+
+AMS-Math
+--------
+The 'amsmath' packaget, together with the 'amssymb' packate comprises a
+powerful math environment. Better than the standard math environments of
+LaTeX. If you plan on including sophisticated formulas you should read the
+'amsmath' docs.
+
+
+The 'listings' package caveat
+-----------------------------
+Using the listings package with KOMA-Script is a little bit problematic. If
+you plan on using the listings package, remember to uncomment the line
+containig '\input{lsthack}' in 'masterarbeit.tex'
+
+
+Versioning with GIT or HG
+-------------------------
+This template is versioned with GIT and Mercurial. If you cloned it, you already
+should have your preferred version control. If you don't want to version
+your thesis with git/hg, simply delete the '.git' or/and '.hg' subdirectories.

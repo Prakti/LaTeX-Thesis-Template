@@ -1,0 +1,10 @@
+.hg
+.hgignore
+*.toc
+*.aux
+*.aux.bak
+*.bbl
+*.blg
+*.lof
+*.log
+*.out
